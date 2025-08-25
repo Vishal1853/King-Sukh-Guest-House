@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - King Sukh Guest House</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    :root {
+      --bg: #0b1020;
+      --card: rgba(255, 255, 255, 0.08);
+      --text: #e8ecff;
+      --accent: #6ea8ff;
+      --accent-2: #a3ffd6;
+      --radius: 20px;
+    }
+    body {
+      background: linear-gradient(135deg, #0b1020, #151b30);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      transition: 0.3s ease;
+      position: relative;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      left: 0;
+      bottom: -5px;
+      transition: 0.3s ease;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    .btn {
+      background: var(--accent);
+      color: #0b1020 !important;
+      padding: 8px 16px;
+      border-radius: var(--radius);
+      font-weight: 600;
+    }
+    .btn:hover {
+      background: var(--accent-2);
+      transform: translateY(-2px);
+    }
+    .about-section {
+      padding: 80px 0;
+      text-align: center;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .section-sub {
+      color: #a9b2d9;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+    }
+    .card {
+      background: var(--card);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(12px);
+      max-width: 700px;
+      margin: auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .animate-fade {
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    .animate-fade-delay {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    .animate-slide {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 1s;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <h2 class="logo">King Sukh</h2>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="btn">Book Now</a>
+      </div>
+    </div>
+  </header>
+  <section class="about-section">
+    <div class="container">
+      <h2 class="section-title animate-fade">About Us</h2>
+      <p class="section-sub animate-fade-delay">Know more about King Sukh Guest House</p>
+      
+      <div class="card animate-slide">
+        <p>
+          Welcome to <b>King Sukh Guest House</b>, where comfort meets luxury at affordable rates.  
+          Nestled in the heart of the city, our guest house is designed to give you a cozy experience
+          with modern amenities and exceptional hospitality.  
+        </p>
+        <br>
+        <p>
+          Whether you’re here for a short trip or a long vacation, our mission is to make you feel at home.
+        </p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>© 2025 King Sukh Guest House. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

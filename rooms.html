@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rooms - King Sukh Guest House</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
+    body{background:#f9f9f9;color:#333;line-height:1.6;}
+    a{text-decoration:none;color:inherit;}
+    header{background:#222;color:#fff;padding:18px 0;position:sticky;top:0;z-index:1000;}
+    .container{width:90%;max-width:1200px;margin:auto;}
+    .nav{display:flex;align-items:center;justify-content:space-between;}
+    .nav h2{font-size:26px;color:#ff9800;font-weight:bold;animation:fadeInLeft 1s ease;}
+    .nav-links a{margin:0 12px;color:#fff;font-weight:500;position:relative;transition:0.3s;}
+    .nav-links a::after{content:"";position:absolute;width:0;height:2px;background:#ff9800;left:0;bottom:-5px;transition:0.3s;}
+    .nav-links a:hover::after{width:100%;}
+    .btn{background:#ff9800;padding:8px 16px;border-radius:6px;font-weight:bold;}
+    .btn:hover{background:#e68900;}
+    section{padding:60px 0;}
+    .section-title{text-align:center;font-size:34px;margin-bottom:10px;color:#222;animation:fadeInDown 1s ease;}
+    .section-sub{text-align:center;color:#666;margin-bottom:40px;animation:fadeInDown 1.2s ease;}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
+    .card{background:#fff;padding:20px;border-radius:14px;box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:transform 0.4s ease,box-shadow 0.4s ease;animation:fadeInUp 1s ease;}
+    .card:hover{transform:translateY(-8px);box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+    .card img{width:100%;border-radius:12px;margin-bottom:15px;}
+    .card h3{font-size:22px;margin-bottom:10px;color:#ff9800;}
+    .card p{color:#555;}
+
+    footer{background:#222;color:#ddd;text-align:center;padding:20px;margin-top:50px;}
+
+    @keyframes fadeInUp{0%{opacity:0;transform:translateY(20px);}100%{opacity:1;transform:translateY(0);}}
+    @keyframes fadeInDown{0%{opacity:0;transform:translateY(-20px);}100%{opacity:1;transform:translateY(0);}}
+    @keyframes fadeInLeft{0%{opacity:0;transform:translateX(-20px);}100%{opacity:1;transform:translateX(0);}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <h2>King Sukh</h2>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html" class="btn">Book Now</a>
+      </div>
+    </div>
+  </header>
+  <section>
+    <div class="container">
+      <h2 class="section-title">Our Rooms</h2>
+      <p class="section-sub">Luxury & Comfort Just for You</p>
+      <div class="grid rooms">
+        <div class="card">
+          <img src="small.jpg" alt="Standard">
+          <h3>Deluxe Room</h3>
+          <p>Cozy room with king-size bed, AC, WiFi, and breakfast.</p>
+        </div>
+        <div class="card">
+          <img src="large.jpg" alt="Deluxe">
+          <h3>Family Suite</h3>
+          <p>Spacious suite perfect for families with modern amenities.</p>
+        </div>
+        <div class="card">
+          <img src="room1.jpg" alt="Family">
+          <h3>Luxury Suite</h3>
+          <p>Experience premium comfort with private balcony and lounge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>© 2025 King Sukh Guest House. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

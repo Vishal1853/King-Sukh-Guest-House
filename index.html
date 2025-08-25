@@ -1,0 +1,376 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>King Sukh Guest House | Comfort Stay in Asansol</title>
+  <meta name="description" content="Redesigned responsive website for King Sukh Guest House. Book comfortable rooms, explore amenities, and contact us easily." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #0f1530;
+      --elev: #131a3a;
+      --text: #e8ecff;
+      --muted: #a9b2d9;
+      --brand: #6ea8ff;
+      --brand-2: #a3ffd6;
+      --accent: #ffd166;
+      --ok: #4ade80;
+      --danger: #ef4444;
+      --ring: 0 0 0 3px rgba(110,168,255,.35);
+      --radius: 20px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
+      --shadow-soft: 0 6px 18px rgba(0,0,0,.25);
+      --maxw: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 70% -10%, #1a2456 0%, transparent 60%),
+                  radial-gradient(1200px 800px at -20% 10%, #14204b 0%, transparent 60%),
+                  var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; border-radius: calc(var(--radius) - 6px); }
+    .container { width: min(100%, calc(var(--maxw) + 32px)); margin-inline: auto; padding: 0 16px; }
+    .grid { display: grid; gap: 24px; }
+
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,16,32,.85), rgba(11,16,32,.45));
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; gap: 10px; align-items: center; font-weight: 700; letter-spacing: .3px; }
+    .brand-logo { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: var(--shadow-soft); display: grid; place-items: center; font-weight: 800; color: #0b1020; }
+    .nav a { opacity: .9; }
+    .nav a:hover { opacity: 1; }
+    .nav-links { display: none; gap: 18px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px; border-radius: 12px; background: linear-gradient(135deg, var(--brand), #6ecbff); color: #001431; font-weight: 700; box-shadow: var(--shadow-soft); border: 1px solid rgba(255,255,255,.15); }
+    .btn:hover { filter: brightness(1.05); box-shadow: 0 10px 28px rgba(110,168,255,.35); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,.18); }
+    .btn-outline:hover { background: rgba(255,255,255,.06); }
+
+    .hero { position: relative; padding: 72px 0 48px; }
+    .hero-wrap { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); font-size: 12px; letter-spacing: .3px; color: var(--muted); }
+    h1 { font-size: clamp(30px, 6vw, 54px); line-height: 1.05; margin: 10px 0 16px; }
+    .lead { font-size: clamp(16px, 2.2vw, 18px); color: var(--muted); margin-bottom: 24px; }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .card { background: linear-gradient(180deg, var(--card), rgba(19,26,58,.6)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .hero-card { padding: 16px; }
+    .hero-img { aspect-ratio: 4/3; background: linear-gradient(120deg, rgba(110,168,255,.2), rgba(163,255,214,.15)); display: grid; place-items: center; color: #dfe7ff; font-weight: 600; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 10px; background: rgba(110,168,255,.12); color: var(--text); font-size: 12px; }
+
+    section { padding: 56px 0; }
+    .section-title { font-size: clamp(22px, 4vw, 34px); margin: 0 0 12px; }
+    .section-sub { color: var(--muted); margin-bottom: 24px; }
+
+    .highlights { grid-template-columns: repeat(3, 1fr); }
+    .highlight { padding: 18px; border-radius: var(--radius); background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); }
+    .highlight h3 { margin: 6px 0 6px; font-size: 18px; }
+    .highlight p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .rooms { grid-template-columns: repeat(3, 1fr); }
+    .room { overflow: hidden; }
+    .room .content { padding: 14px 16px 18px; }
+    .tag { display: inline-block; padding: 4px 10px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; font-size: 12px; color: var(--muted); }
+    .price { font-weight: 700; font-size: 20px; margin-left: auto; }
+    .row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+    .gallery { grid-template-columns: repeat(4, 1fr); }
+    .gallery img { aspect-ratio: 1/1; object-fit: cover; }
+
+    .testimonials { grid-template-columns: repeat(3, 1fr); }
+    .quote { padding: 18px; }
+    .stars { letter-spacing: 2px; }
+
+    .map { overflow: hidden; border-radius: var(--radius); border: 1px solid rgba(255,255,255,.12); }
+    .map iframe { width: 100%; height: 360px; border: 0; display: block; }
+
+    form { display: grid; gap: 12px; }
+    input, textarea, select { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.03); color: var(--text); outline: none; }
+    input:focus, textarea:focus, select:focus { box-shadow: var(--ring); }
+    label { font-size: 14px; color: var(--muted); }
+
+    footer { padding: 32px 0; color: var(--muted); border-top: 1px solid rgba(255,255,255,.08); background: linear-gradient(to top, rgba(0,0,0,.25), transparent); }
+    .footer-grid { display: grid; gap: 24px; grid-template-columns: 2fr 1fr 1fr; }
+    .small { font-size: 13px; }
+
+    .mt-2{margin-top:8px}.mt-4{margin-top:16px}.mt-6{margin-top:24px}
+    .mb-0{margin-bottom:0}.mb-1{margin-bottom:4px}.mb-2{margin-bottom:8px}.mb-4{margin-bottom:16px}.mb-6{margin-bottom:24px}
+    .center { text-align: center; }
+
+    @media (max-width: 1024px) {
+      .hero-wrap { grid-template-columns: 1fr; }
+      .rooms { grid-template-columns: repeat(2, 1fr); }
+      .testimonials { grid-template-columns: repeat(2, 1fr); }
+      .gallery { grid-template-columns: repeat(3, 1fr); }
+      .highlights { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .rooms { grid-template-columns: 1fr; }
+      .testimonials { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 2, 1fr; grid-template-columns: repeat(2, 1fr); }
+      .highlights { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .nav .brand span { display: none; }
+    }
+  </style>
+</head>
+</body>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <a class="brand" href="#home">
+        <span class="brand-logo" aria-hidden="true">KS</span>
+        <span>King Sukh Guest House</span>
+         <a class="btn" href="http://127.0.0.1:5500/#home" aria-label="Home">Home</a>
+           <a class="btn" href="about.html" aria-label="About Us">About Us</a>
+<a class="btn" href="services.html" aria-label="Services">Services</a>
+<a class="btn" href="rooms.html" aria-label="Rooms">Rooms</a>
+<a class="btn" href="gallery.html" aria-label="Gallery">Gallery</a>
+
+      </a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#amenities">Amenities</a>
+        <a href="#rooms">Rooms</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn" href="booking.html" aria-label="Book your stay">Book Now</a>
+    </div>
+  </header>
+  <main id="home" class="hero">
+    <div class="container hero-wrap">
+      <section class="hero-card card">
+        <span class="eyebrow">Quiet comfort in the heart of Asansol</span>
+        <h1>Feel at home at <span style="background: linear-gradient(135deg, var(--brand), var(--brand-2)); -webkit-background-clip: text; background-clip: text; color: transparent;">King Sukh Guest House</span></h1>
+        <p class="lead">Relax in thoughtfully designed rooms, enjoy friendly service, and explore nearby attractions. Book in minutes—no hassle, just hospitality.</p>
+        <div class="hero-ctas">
+          <a class="btn" href="#rooms">View Rooms</a>
+          <a class="btn btn-outline" href="#contact">Enquire</a>
+        </div>
+        <div class="row mt-6" aria-label="Quick facts">
+          <span class="pill">✓ Free Wi‑Fi</span>
+          <span class="pill">✓ AC Rooms</span>
+          <span class="pill">✓ 24/7 Support</span>
+          <span class="pill">✓ Near Transport</span>
+        </div>
+      </section>
+      <aside class="card hero-card" aria-label="Preview image">
+        <div class="hero-img">
+          <img src="out.jpg" alt="Neighborhood" />
+        </div>
+  
+      </aside>
+    </div>
+  </main>
+  <section id="amenities">
+    <div class="container">
+      <h2 class="section-title">Amenities that matter</h2>
+      <p class="section-sub">Everything you need for a comfortable and convenient stay.</p>
+      <div class="grid highlights">
+        <article class="highlight card">
+          <h3>High‑speed Wi‑Fi</h3>
+          <p>Reliable connectivity for work and entertainment in all rooms.</p>
+        </article>
+        <article class="highlight card">
+          <h3>In‑room Comfort</h3>
+          <p>Air‑conditioning, fresh linens, ensuite bathrooms, and daily housekeeping.</p>
+        </article>
+        <article class="highlight card">
+          <h3>Great Location</h3>
+          <p>Easy access to transit, business hubs, and local eateries.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <section id="rooms">
+    <div class="container">
+      <h2 class="section-title">Choose your room</h2>
+      <p class="section-sub">Transparent pricing. No surprises.</p>
+      <div class="grid rooms">
+        <article class="room card">
+          <img src="small.jpg" alt="Standard room with queen bed" />
+          <div class="content">
+            <div class="row">
+              <span class="tag">Standard</span>
+              <span class="price">₹1,000/night</span>
+            </div>
+            <p class="small mt-2" style="color: var(--muted);">Cozy room with essentials—ideal for solo travelers.</p>
+          </div>
+        </article>
+        <article class="room card">
+          <img src="large.jpg" alt="Deluxe room with king bed and seating" />
+          <div class="content">
+            <div class="row">
+              <span class="tag">Deluxe</span>
+              <span class="price">₹1,900/night</span>
+            </div>
+            <p class="small mt-2" style="color: var(--muted);">Spacious comfort with additional seating and amenities.</p>
+          </div>
+        </article>
+        <article class="room card">
+          <img src="room1.jpg" alt="Family room with two beds" />
+          <div class="content">
+            <div class="row">
+              <span class="tag">Family</span>
+              <span class="price">₹2,500/night</span>
+            </div>
+            <p class="small mt-2" style="color: var(--muted);">Perfect for families or groups, with flexible bedding.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title">Gallery</h2>
+      <p class="section-sub">A quick look around the property.</p>
+      <div class="grid gallery">
+        <img src="1.jpg" alt="Lobby area" />
+        <img src="out.jpg" alt="Exterior view" />
+        <img src="small.jpg" alt="Dining space" />
+        <img src="room1.jpg" alt="Room interior" />
+        <img src="flower.jpg" alt="Bathroom" />
+        <img src="service.jpg" alt="Reception desk" />
+        <img src="ayodhya.webp" alt="Neighborhood" />
+        <img src="recep.jpg" alt="Seating area" />
+      </div>
+      <p class="small mt-2" style="color: var(--muted);">Replace placeholders with real photos from your asset folder.</p>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title">Guests love staying with us</h2>
+      <p class="section-sub">Here’s what recent visitors are saying.</p>
+      <div class="grid testimonials">
+        <figure class="quote card">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="mb-2">Clean rooms, courteous staff, and great value. Will return!</blockquote>
+          <figcaption class="small" style="color: var(--muted);">— Priya S.</figcaption>
+        </figure>
+        <figure class="quote card">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="mb-2">Fast check‑in and comfy beds. Loved the location.</blockquote>
+          <figcaption class="small" style="color: var(--muted);">— Ankit G.</figcaption>
+        </figure>
+        <figure class="quote card">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <blockquote class="mb-2">Reliable Wi‑Fi for work and peaceful surroundings.</blockquote>
+          <figcaption class="small" style="color: var(--muted);">— Neha R.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <section id="location">
+    <div class="container">
+      <h2 class="section-title">Find us</h2>
+      <p class="section-sub">Conveniently located in Asansol. Replace the map with your exact location.</p>
+      <div class="map card">
+        <iframe title="Map placeholder" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=86.9%2C23.6%2C87.2%2C23.8&amp;layer=mapnik"></iframe>
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Enquire or book</h2>
+      <p class="section-sub">Send us your dates and we’ll get back with the best rates.</p>
+      <div class="grid" style="grid-template-columns: 1.1fr .9fr; align-items: start;">
+  <form class="card" name="booking" action="booking.php" method="POST">
+  <h2 style="text-align:center; margin-bottom:15px;">Booking Enquiry</h2>
+
+  <label for="name">Full Name</label>
+  <input id="name" name="name" placeholder="Your name" required />
+
+  <div class="grid">
+    <div>
+      <label for="checkin">Check-in</label>
+      <input type="date" id="checkin" name="checkin" required />
+    </div>
+    <div>
+      <label for="checkout">Check-out</label>
+      <input type="date" id="checkout" name="checkout" required />
+    </div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <label for="guests">Guests</label>
+      <select id="guests" name="guests">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4+</option>
+      </select>
+    </div>
+    <div>
+      <label for="room">Room Type</label>
+      <input type="text" id="room" name="room" placeholder="Enter room type (ex: Deluxe, Suite)" required />
+    </div>
+  </div>
+
+  <label for="message">Additional Message</label>
+  <textarea id="message" name="message" rows="3" placeholder="Write any special request..."></textarea>
+
+  <button class="btn" type="submit">Submit</button>
+</form>
+
+
+
+        <aside class="card" style="padding: 18px;">
+          <h3 class="mb-1">Contact details</h3>
+          <p class="mb-4 small" style="color: var(--muted);">Prefer calling or messaging? Reach us here.</p>
+          <ul class="small" style="list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;">
+            <li><strong>Phone:</strong> +91 90000 00000</li>
+            <li><strong>Email:</strong> bookings@kingsukhguesthouse.com</li>
+            <li><strong>Address:</strong> Asansol, India</li>
+            <li><strong>Check‑in:</strong> 12:00 PM · <strong>Check‑out:</strong> 11:00 AM</li>
+          </ul>
+          <p class="small mt-4" style="color: var(--muted);">Replace placeholders with real contact information.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="brand mb-2"><span class="brand-logo">KS</span><span>King Sukh Guest House</span></div>
+        <p class="small">© <span id="year"></span> King Sukh Guest House. All rights reserved.</p>
+      </div>
+      <div>
+        <p class="small mb-2" style="color: var(--text); font-weight: 600;">Explore</p>
+        <p class="small"><a href="#rooms">Rooms</a> · <a href="#amenities">Amenities</a> · <a href="#gallery">Gallery</a></p>
+      </div>
+      <div>
+        <p class="small mb-2" style="color: var(--text); font-weight: 600;">Policy</p>
+        <p class="small">Cancellation & House Rules available on request.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelector('form[name="booking"]').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert('Thanks! Your enquiry has been recorded. Replace this alert with a real submission endpoint.');
+    });
+  </script>
+</body>
+</html>
